@@ -28,8 +28,9 @@ function App() {
 
   return (
       <Authenticator>
-          {/*{({ signOut, user }) => (*/}
+          {({ signOut, user }) => (
     <main>
+        <h1>{user?.signInDetails?.loginId}今天要吃什麼呢?</h1>
       {/*<h1>My todos</h1>*/}
       {/*<button onClick={createTodo}>+ new</button>*/}
       {/*<ul>*/}
@@ -78,9 +79,9 @@ function App() {
                 </div>
             </div>
         </div>
-        {/*<button onClick={signOut}>Sign out</button>*/}
+        <button onClick={signOut}>Sign out</button>
     </main>
-          {/*)}*/}
+          )}
       </Authenticator>
   );
 }
