@@ -1,4 +1,4 @@
-import { Authenticator } from '@aws-amplify/ui-react'
+// import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 // import { useEffect, useState } from "react";
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -7,9 +7,14 @@ import '@aws-amplify/ui-react/styles.css'
 import './App.css';
 import djidjdidje from './assets/djidjdidje.png';
 
+
+import Question from './question'; 
+import { useNavigate } from 'react-router-dom';
+
 // const client = generateClient<Schema>();
 
 function App() {
+    const navigate = useNavigate();
   // const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
   //
   // useEffect(() => {
@@ -27,10 +32,10 @@ function App() {
   // }
 
   return (
-      <Authenticator>
-          {({ signOut, user }) => (
-    <main>
-        <h1>{user?.signInDetails?.loginId}今天要吃什麼呢?</h1>
+    //   <Authenticator>
+    //       {({ signOut, user }) => (
+        <main style={{width: '100vw', height: '100vh'}}>
+{/* <h1>{user?.signInDetails?.loginId}今天要吃什麼呢?</h1> */}
       {/*<h1>My todos</h1>*/}
       {/*<button onClick={createTodo}>+ new</button>*/}
       {/*<ul>*/}
@@ -52,8 +57,8 @@ function App() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                width: '100vw',
-                height: '100vh',
+                width: '100%',
+                height: '100%',
             }}
         >
             <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)", width: '56%', height: '95%', borderRadius: "10px" }}>
@@ -69,7 +74,7 @@ function App() {
             </div>
             <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)", width: '41%', height: '95%', borderRadius: "10px", position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '70%' }}>
-                    <button style={{ width: '30%', height: '100px', fontSize: '20px', padding: '10px', backgroundColor: "#FFF", borderRadius: "10px", borderColor: "#FFF", color: '#888', letterSpacing: '5px', fontWeight: 'bold' }}>
+                    <button style={{ width: '30%', height: '100px', fontSize: '20px', padding: '10px', backgroundColor: "#FFF", borderRadius: "10px", borderColor: "#FFF", color: '#888', letterSpacing: '5px', fontWeight: 'bold' }} onClick={() => navigate('/question')}>
                         心靈測驗
                     </button>
                 </div>
@@ -79,10 +84,10 @@ function App() {
                 </div>
             </div>
         </div>
-        <button onClick={signOut}>Sign out</button>
-    </main>
-          )}
-      </Authenticator>
+        {/*<button onClick={signOut}>Sign out</button>*/}
+        </main>
+    //       )}
+    //   </Authenticator>
   );
 }
 
