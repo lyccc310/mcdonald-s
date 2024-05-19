@@ -46,7 +46,7 @@ const select = () => {
         </div>
 
     </div>
-  );S
+  );
 };
 
 export default select;
