@@ -6,9 +6,9 @@ import '@aws-amplify/ui-react/styles.css'
 // import { generateClient } from "aws-amplify/data";
 import './App.css';
 import djidjdidje from './assets/djidjdidje.png';
+ 
 
 
-import Question from './question'; 
 import { useNavigate } from 'react-router-dom';
 import logo from './assets/folder/103全品牌圓型LOGO_王品.png'; 
 // const client = generateClient<Schema>();
@@ -81,6 +81,18 @@ function App() {
             </div>
             <div>
               <button style={{
+                backgroundColor: '#FFF',
+                border: 'none',
+                color: '#888',
+                fontSize: '18px',
+                cursor: 'pointer',
+                marginLeft: '20px',
+                borderRadius:'20px',
+                width:"100px"
+              }} onClick={() => navigate('/ChatRoom')}>
+                聊天室
+              </button>
+              <button style={{
                 backgroundColor: 'transparent',
                 border: 'none',
                 color: 'white',
@@ -88,13 +100,13 @@ function App() {
                 cursor: 'pointer',
                 marginLeft: '20px'
               }}>
-                要吃什麼大冒險
+                品可夢go
               </button>
             </div>
           </div>
             <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)", width: '56%', height: '95%', borderRadius: "10px" }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '70%' }}>
-                    <button style={{ width: '200px', height: '100px', fontSize: '20px', padding: '10px', backgroundColor: "#FFF", borderRadius: "10px", borderColor: "#FFF", color: '#888', letterSpacing: '5px', fontWeight: 'bold' }}>
+                    <button style={{ width: '200px', height: '100px', fontSize: '20px', padding: '10px', backgroundColor: "#FFF", borderRadius: "10px", borderColor: "#FFF", color: '#888', letterSpacing: '5px', fontWeight: 'bold' }} onClick={() => navigate('/select')}>
                         開始冒險
                     </button>
                 </div>

@@ -1,5 +1,4 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+
 import qb from "./assets/qb.png";
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';

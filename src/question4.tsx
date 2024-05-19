@@ -1,4 +1,4 @@
-import React from 'react';
+
 import qb from "./assets/qb4.png";
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './ChatRoom.css';
 
-const ChatRoom = () => {
-    const [messages, setMessages] = useState([]);
-    const [newMessage, setNewMessage] = useState('');
+interface Message {
+    text: string;
+    sender: string;
+}
 
-    const handleSendMessage = () => {
+function ChatRoom() {
+    const [messages, setMessages] = useState<Message[]>([]);
+    const [newMessage, setNewMessage] = useState<string>('');
+
+    function handleSendMessage() {
         if (newMessage.trim()) {
             setMessages([...messages, { text: newMessage, sender: 'user' }]);
             setNewMessage('');
         }
-    };
+    }
 
-    const handleInputChange = (event) => {
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
         setNewMessage(event.target.value);
-    };
+    }
 
     return (
         <div className="chat-room">
@@ -36,6 +41,6 @@ const ChatRoom = () => {
             </div>
         </div>
     );
-};
+}
 
 export default ChatRoom;
