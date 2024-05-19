@@ -21,7 +21,8 @@ function Question() {
       flexDirection: 'column', // 垂直方向排列子元素
       justifyContent: 'flex-start', // 垂直方向从上开始对齐
       alignItems: 'center', // 水平居中
-      paddingTop: '10vh' // 调整这个值来设置距离顶部的距离
+      paddingTop: '10vh', // 调整这个值来设置距离顶部的距离
+      overflow: 'auto'
     }}>
       <div style={{
         width: "60%", // 调整宽度以适应文本内容
