@@ -1,10 +1,13 @@
 import React from 'react';
 import qb from "./assets/qb3.png";
-
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Question() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { ch } = location.state;
+
   return (
     <div style={{
       backgroundImage: `url(${qb})`,
@@ -58,7 +61,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question4')}>
+          }} onClick={() => navigate('/question4', { state: { ch: (ch || '') + '注重外觀,' } })}>
             精美的小雕塑
           </button>
         </div>
@@ -78,7 +81,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question4')}>
+          }} onClick={() => navigate('/question4', { state: { ch: (ch || '') + '注重自己喜好,' } })}>
             古怪的小玩意
           </button>
           <button style={{
@@ -93,7 +96,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question4')}>
+          }} onClick={() => navigate('/question4', { state: { ch: (ch || '') + '注重食物品質,' } })}>
             非常多的零食
           </button>
           <button style={{
@@ -108,7 +111,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question4')}>
+          }} onClick={() => navigate('/question4', { state: { ch: (ch || '') + '注重cp值,' } })}>
             務實的小工具
           </button>
         </div>

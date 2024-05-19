@@ -1,10 +1,13 @@
 import React from 'react';
 import qb from "./assets/qb2.png";
+import { useLocation } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
 function Question() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { ch} = location.state|| {};
   return (
     
     <div style={{
@@ -59,7 +62,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question3')}>
+          }} onClick={() => navigate('/question3', { state: { ch: (ch || '') + '喜歡舒適,' } })}>
             起床重睡，返回床上
           </button>
         </div>
@@ -79,7 +82,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question3')}>
+          }} onClick={() => navigate('/question3', { state: { ch: (ch || '') +'時間比較少,' } })}>
             靠腰完蛋了!上班要遲到了!
           </button>
         </div>
@@ -99,7 +102,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question3')}>
+          }} onClick={() => navigate('/question3', { state: { ch: (ch || '') +'對生活品質有要求,' } })}>
             真是個美好的早晨，來享用美味的早餐好了
           </button>
         </div>

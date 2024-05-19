@@ -1,10 +1,12 @@
 import React from 'react';
 import qb from "./assets/qb4.png";
-
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Question() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { ch } = location.state;
   return (
     
     <div style={{
@@ -59,7 +61,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question5')}>
+          }} onClick={() => navigate('/question5', { state: { ch: (ch || '') + '金錢比較充裕,' } })}>
             貴貴但自己很喜歡的東西
           </button>
         </div>
@@ -79,7 +81,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question5')}>
+          }} onClick={() => navigate('/question5', { state: { ch: (ch || '') + '金錢方面較節省,' } })}>
             自己覺得不錯而且價格也比較可以接受的東西
           </button>
         </div>

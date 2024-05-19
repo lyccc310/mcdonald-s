@@ -58,7 +58,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }}   onClick={() => navigate('/question2')}>
+          }}   onClick={() => navigate('/question2', { state: { ch: '喜歡熱鬧,' } })}>
             找上一大群人，該大肆慶祝了
           </button>
         </div>
@@ -78,7 +78,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question2')}>
+          }} onClick={() => navigate('/question2', { state: { ch: '喜歡跟親近的人吃飯,' } })}>
             找一兩個親近的人，聊天放鬆一下
           </button>
         </div>
@@ -98,7 +98,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/question2')}>
+          }} onClick={() => navigate('/question2', { state: { ch: '喜歡自己一個人,' } })}>
             不找任何人，自己獨享大餐
           </button>
         </div>

@@ -2,9 +2,12 @@ import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 import qb from "./assets/qb.png";
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function End() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { ch } = location.state;
     return (
         <div  style={{
             backgroundImage: `url(${qb})`,
@@ -36,7 +39,11 @@ function End() {
                 borderWidth:"8px",
                 borderColor:"rgba(245, 255, 245, 1)"
                 }} onClick={() => navigate('/')}>
-                
+
+                     {/* !!!!!!!!!!!!!!要傳的特徵!!!!! */}
+                {ch} 
+                   {/* !!!!!!!!!!!!!!要傳的特徵!!!!! */}
+                   
                 </button>
             </div>
           </div>

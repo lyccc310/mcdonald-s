@@ -1,10 +1,12 @@
 import React from 'react';
 import qb from "./assets/qb5.png";
-
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Question() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { ch } = location.state;
   return (
     
     <div style={{
@@ -59,7 +61,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/end')}>
+          }} onClick={() => navigate('/end', { state: { ch: (ch || '') + '對燒肉有興趣,' } })}>
             肉肉套餐
           </button>
         </div>
@@ -79,7 +81,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/end')}>
+          }} onClick={() => navigate('/end', { state: { ch: (ch || '') + '對中式食物有興趣,' } })}>
             吃些清粥小菜好了
           </button>
         </div>
@@ -99,7 +101,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/end')}>
+          }} onClick={() => navigate('/end', { state: { ch: (ch || '') + '對火鍋或日韓料理有興趣,' } })}>
             熱熱的湯麵
           </button>
           
@@ -120,7 +122,7 @@ function Question() {
           width:"100%",
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
-          }} onClick={() => navigate('/end')}>
+          }} onClick={() => navigate('/end', { state: { ch: (ch || '') + '對麻辣鍋或辣的食物有興趣,' } })}>
             有辣的那個我就吃
           </button>
           
