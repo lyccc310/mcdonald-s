@@ -1,32 +1,64 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, SetStateAction } from 'react';
 import './ChatRoom.css';
+import axios from 'axios';
 
 interface Message {
-    text: string;
-    sender: string;
+    role: string;
+    content: string;
 }
 
 function ChatRoom() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [newMessage, setNewMessage] = useState<string>('');
 
-    function handleSendMessage() {
+    const handleSendMessage = async () => {
         if (newMessage.trim()) {
-            setMessages([...messages, { text: newMessage, sender: 'user' }]);
+            setMessages([...messages, { role: 'user', content: newMessage }]);
+            try {
+                console.log(newMessage)
+                // 構建請求的消息體
+                const requestBody = {
+                    question: newMessage
+                };
+                console.log("requestBody",requestBody)
+                const response = await axios.post(
+                    'https://czbnfbbjh5.execute-api.us-west-2.amazonaws.com/test/chatbot',
+                    requestBody,
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+
+                // 打印請求的回應數據
+                console.log('Response:', response.data);
+                // 檢查回應是否符合預期結構
+                if (response.data && response.data.answer) {
+                    const botResponse = response.data.answer;
+                    setMessages([...messages, { role: 'user', content: newMessage }, { role: 'bot', content: botResponse }]);
+                } else {
+                    console.error('回應結構不符預期:', response.data);
+                }
+            } catch (error) {
+                console.error('錯誤:', error);
+            }
             setNewMessage('');
         }
-    }
+    };
 
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+
+    const handleInputChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setNewMessage(event.target.value);
-    }
+    };
+
 
     return (
         <div className="chat-room">
             <div className="message-list">
                 {messages.map((message, index) => (
-                    <div key={index} className={`message ${message.sender}`}>
-                        {message.text}
+                    <div key={index} className={`message ${message.role}`}>
+                        {message.content}
                     </div>
                 ))}
             </div>
