@@ -14,6 +14,7 @@ import Question5 from './question5.tsx';
 import End from './end.tsx';
 import Chat from './ChatRoom.tsx';
 import Select from './select.tsx';
+import Task from './task.tsx';
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/end" element={<End />} />
         <Route path="/ChatRoom" element={<Chat />} />
         <Route path="/select" element={<Select />} />
+        <Route path="/task" element={<Task />} />
       </Routes>
     </Router>
   </React.StrictMode>

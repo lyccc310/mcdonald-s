@@ -1,7 +1,13 @@
 import React from 'react';
 import sb from "./assets/select.png";
+
+import { useNavigate } from 'react-router-dom';
+
 const select = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const navigate = useNavigate();
   const containerStyle: React.CSSProperties = {
+    
     backgroundImage: `url(${sb})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -24,6 +30,8 @@ const select = () => {
     border: '1px solid #000',
     borderRadius: '5px',
     cursor: 'pointer',
+    backgroundColor:'#FFF',
+    color:'#555'
   };
 
 
@@ -34,14 +42,14 @@ const select = () => {
                 <text style={{fontSize:24,color: "#888"}}>選擇最接近自己的選項</text>
             </div>
             <div style={rowStyle}>
-                <button style={buttonStyle}>1</button>
-                <button style={buttonStyle}>2</button>
-                <button style={buttonStyle}>3</button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '家庭客' } })}>家庭客 </button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '小資族群' } })}>小資族群</button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '白領上班族' } })}>白領上班族</button>
             </div>
             <div style={rowStyle}>
-                <button style={buttonStyle}>4</button>
-                <button style={buttonStyle}>5</button>
-                <button style={buttonStyle}>6</button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '雅致饗客' } })}>雅致饗客</button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '風雅饗宴客' } })}>風雅饗宴客</button>
+                <button style={buttonStyle}  onClick={() => navigate('/task', { state: { pch: '鴻福食客' } })}>鴻福食客</button>
             </div>
         </div>
 
