@@ -10,7 +10,7 @@ import djidjdidje from './assets/djidjdidje.png';
 
 import Question from './question'; 
 import { useNavigate } from 'react-router-dom';
-
+import logo from './assets/folder/103全品牌圓型LOGO_王品.png'; 
 // const client = generateClient<Schema>();
 
 function App() {
@@ -60,7 +60,38 @@ function App() {
                 width: '100%',
                 height: '100%',
             }}
-        >
+            
+        >   <div style={{
+            width: '100%',
+            height: '60px',
+            backgroundColor: 'rgba(185,146,155, 0.7)',
+            color: 'white',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '0 20px',
+            boxSizing: 'border-box',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 1000,
+          }}>
+            <div style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                <img src={logo} alt="Rice" style={{ height: '50px' }} />
+            </div>
+            <div>
+              <button style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: 'white',
+                fontSize: '18px',
+                cursor: 'pointer',
+                marginLeft: '20px'
+              }}>
+                要吃什麼大冒險
+              </button>
+            </div>
+          </div>
             <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)", width: '56%', height: '95%', borderRadius: "10px" }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', height: '70%' }}>
                     <button style={{ width: '200px', height: '100px', fontSize: '20px', padding: '10px', backgroundColor: "#FFF", borderRadius: "10px", borderColor: "#FFF", color: '#888', letterSpacing: '5px', fontWeight: 'bold' }}>
@@ -84,6 +115,7 @@ function App() {
                 </div>
             </div>
         </div>
+        
         {/*<button onClick={signOut}>Sign out</button>*/}
         </main>
     //       )}

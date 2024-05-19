@@ -11,6 +11,7 @@ import Question2 from './question2.tsx';
 import Question3 from './question3.tsx';
 import Question4 from './question4.tsx';
 import Question5 from './question5.tsx';
+import End from './end.tsx';
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/question3" element={<Question3 />} />
         <Route path="/question4" element={<Question4 />} />
         <Route path="/question5" element={<Question5 />} />
+        <Route path="/end" element={<End />} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -1,5 +1,5 @@
 import React from 'react';
-import qb from "./assets/qb2.png";
+import qb from "./assets/qb4.png";
 
 import { useNavigate } from 'react-router-dom';
 
@@ -40,7 +40,7 @@ function Question() {
             textAlign: "center",
             margin: 0 // 去除默认的段落边距
           }}>
-            慶祝完後，你沉沉睡去，醒來時已經是清晨了，你想到的第一件事情是什麼呢?
+            你經過一家商店，你看到了一個你很喜歡的東西，但價格有點貴，你轉頭發現另一個你感覺也不錯的東西，價格也比較便宜，你會買哪個呢?
           </p>
         </div>
         <div style={{
@@ -60,7 +60,7 @@ function Question() {
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
           }} onClick={() => navigate('/question5')}>
-            起床重睡，返回床上
+            貴貴但自己很喜歡的東西
           </button>
         </div>
         <div style={{
@@ -80,7 +80,7 @@ function Question() {
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
           }} onClick={() => navigate('/question5')}>
-            靠腰完蛋了!上班要遲到了!
+            自己覺得不錯而且價格也比較可以接受的東西
           </button>
         </div>
 

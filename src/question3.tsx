@@ -1,5 +1,5 @@
 import React from 'react';
-import qb from "./assets/qb2.png";
+import qb from "./assets/qb3.png";
 
 import { useNavigate } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ function Question() {
             textAlign: "center",
             margin: 0 // 去除默认的段落边距
           }}>
-            慶祝完後，你沉沉睡去，醒來時已經是清晨了，你想到的第一件事情是什麼呢?
+            在你準備開始動作時，你發現你的床邊有一個禮物盒，你覺得裡面是甚麼呢?
           </p>
         </div>
         <div style={{
@@ -59,7 +59,7 @@ function Question() {
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
           }} onClick={() => navigate('/question4')}>
-            起床重睡，返回床上
+            精美的小雕塑
           </button>
         </div>
         <div style={{
@@ -79,7 +79,37 @@ function Question() {
           borderWidth:"8px",
           borderColor:"rgba(245, 255, 245, 1)"
           }} onClick={() => navigate('/question4')}>
-            靠腰完蛋了!上班要遲到了!
+            古怪的小玩意
+          </button>
+          <button style={{
+            color: "#FFF", // 修改文本颜色以在白色背景上更清晰
+            fontSize: "26px",
+            textAlign: "center",
+            margin: 0 // 去除默认的段落边距          
+            ,backgroundColor: "rgba(245, 255, 245, 0.3)",
+          padding: "20px", // 添加一些内边距
+          borderRadius: "20px",
+          marginTop:"8%",
+          width:"100%",
+          borderWidth:"8px",
+          borderColor:"rgba(245, 255, 245, 1)"
+          }} onClick={() => navigate('/question4')}>
+            非常多的零食
+          </button>
+          <button style={{
+            color: "#FFF", // 修改文本颜色以在白色背景上更清晰
+            fontSize: "26px",
+            textAlign: "center",
+            margin: 0 // 去除默认的段落边距          
+            ,backgroundColor: "rgba(245, 255, 245, 0.3)",
+          padding: "20px", // 添加一些内边距
+          borderRadius: "20px",
+          marginTop:"8%",
+          width:"100%",
+          borderWidth:"8px",
+          borderColor:"rgba(245, 255, 245, 1)"
+          }} onClick={() => navigate('/question4')}>
+            務實的小工具
           </button>
         </div>
 
