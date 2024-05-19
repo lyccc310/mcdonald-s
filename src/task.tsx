@@ -26,7 +26,7 @@ const task = () => {
             <text style={{color:'#FFF'}}>{pch}</text>
         </div>
         <div>
-            <text style={{color:'#FFF'}}>歡迎，根據心理測驗的結果，我們推薦你這些餐廳。前往用餐並回報吧。</text>
+            <text style={{color:'#FFF',fontSize:20}}>歡迎，根據心理測驗的結果，我們推薦你這些餐廳。前往用餐並回報吧。</text>
         </div>
         <button  style={{
         color: "#DDD", // 修改文本颜色以在白色背景上更清晰
@@ -40,7 +40,7 @@ const task = () => {
         width:"10%",
         borderWidth:"8px",
         borderColor:"rgba(245, 255, 245, 1)",
-        color:'#FFF'
+  
         }} onClick={() => navigate('/')}>
             完成
         </button></div>
